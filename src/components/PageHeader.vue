@@ -3,13 +3,13 @@ export default {
   data() {
     return {
       message: 'TEST',
-      nav1: 'Donna',
-      nav2: 'Uomo',
-      nav3: 'Bambini',
+      nav: ['Donna', 'Uomo', 'Bambini'],
       logo: '/public/img/boolean-logo.png',
-      user: '/img/icons/header/icons8-user-24.png',
-      heart: '/img/icons/header/icons8-heart-24.png',
-      cart: '/img/icons/header/icons8-shopping-bag-24.png',
+      icons: [
+        '/img/icons/header/icons8-user-24.png',
+        '/img/icons/header/icons8-heart-24.png',
+        '/img/icons/header/icons8-shopping-bag-24.png',
+      ],
     };
   },
 };
@@ -20,23 +20,23 @@ export default {
       <nav>
         <ul>
           <li>
-            <a href="#">{{ nav1 }}</a>
+            <a href="#">{{ nav[0] }}</a>
           </li>
           <li>
-            <a href="#">{{ nav2 }}</a>
+            <a href="#">{{ nav[1] }}</a>
           </li>
           <li>
-            <a href="#">{{ nav3 }}</a>
+            <a href="#">{{ nav[2] }}</a>
           </li>
         </ul>
       </nav>
       <img :src="logo" alt="Logo" />
       <div>
         <ul>
-          <li><img :src="user" alt="" /></li>
-          <li><img :src="heart" alt="" /></li>
+          <li><img :src="icons[0]" alt="" /></li>
+          <li><img :src="icons[1]" alt="" /></li>
           <li>
-            <img :src="cart" alt="" />
+            <img :src="icons[2]" alt="" />
           </li>
         </ul>
       </div>
@@ -46,9 +46,10 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables.scss' as *;
+@use '../styles/partials/mixins.scss' as *;
 
 header {
-  display: flex;
+  @include flex;
   justify-content: space-around;
   background-color: $main-color;
   align-items: center;
@@ -57,8 +58,7 @@ header {
 nav ul,
 header div ul {
   padding: 20px;
-  display: flex;
-  list-style: none;
+  @include flex;
 }
 
 header nav ul li a,

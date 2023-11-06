@@ -1,0 +1,8 @@
+@mixin absolute {
+  position: absolute;
+  display: inline-block;
+}
+
+@mixin flex {
+  display: flex;
+}

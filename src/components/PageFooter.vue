@@ -33,19 +33,20 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
 footer {
-  display: flex;
+  @include flex;
   justify-content: space-around;
   align-content: center;
   gap: 800px;
   padding: 20px 0;
-  background-color: black;
-  color: white;
+  background-color: $black-color;
+  color: $white-color;
 }
 
 footer ul {
-  display: flex;
-  list-style: none;
+  @include flex;
   padding: 5px 0;
 }
 
@@ -54,8 +55,7 @@ footer ul li {
 }
 
 footer ul li a {
-  text-decoration: none;
-  color: white;
+  color: $white-color;
   font-size: 12px;
 }
 

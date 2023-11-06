@@ -99,11 +99,11 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
 
 /* HEARTS */
 .hearts {
-  position: absolute;
-  display: inline-block;
+  @include absolute;
   background-color: white;
   padding: 10px 13px;
   top: 8px;
@@ -135,11 +135,11 @@ export default {
 /* LABELS */
 
 .label {
-  position: absolute;
-  display: inline-block;
+  @include absolute;
+
   left: 0px;
   bottom: 15%;
-  color: white;
+  color: $white-color;
 }
 .discount {
   background-color: $red-color;

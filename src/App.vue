@@ -1,7 +1,7 @@
 <script>
-import PageHeader from './components/Page-Header.vue';
-import PageMain from './components/Page-Main.vue';
-import PageFooter from './components/Page-Footer.vue';
+import PageHeader from './components/PageHeader.vue';
+import PageMain from './components/PageMain.vue';
+import PageFooter from './components/PageFooter.vue';
 
 export default {
   components: {
