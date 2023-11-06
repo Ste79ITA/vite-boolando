@@ -1,7 +1,16 @@
 <script>
 export default {
   data() {
-    return { message: 'TEST' };
+    return {
+      message: 'TEST',
+      nav1: 'Donna',
+      nav2: 'Uomo',
+      nav3: 'Bambini',
+      logo: '/public/img/boolean-logo.png',
+      user: '/img/icons/header/icons8-user-24.png',
+      heart: '/img/icons/header/icons8-heart-24.png',
+      cart: '/img/icons/header/icons8-shopping-bag-24.png',
+    };
   },
 };
 </script>
@@ -10,18 +19,24 @@ export default {
     <header>
       <nav>
         <ul>
-          <li><a href="#">Donna</a></li>
-          <li><a href="#">Uomo</a></li>
-          <li><a href="#">Bambini</a></li>
+          <li>
+            <a href="#">{{ nav1 }}</a>
+          </li>
+          <li>
+            <a href="#">{{ nav2 }}</a>
+          </li>
+          <li>
+            <a href="#">{{ nav3 }}</a>
+          </li>
         </ul>
       </nav>
-      <img src="./img/boolean-logo.png" alt="Logo" />
+      <img :src="logo" alt="Logo" />
       <div>
         <ul>
-          <li><img src="./img/icons/header/icons8-user-24.png" alt="" /></li>
-          <li><img src="./img/icons/header/icons8-heart-24.png" alt="" /></li>
+          <li><img :src="user" alt="" /></li>
+          <li><img :src="heart" alt="" /></li>
           <li>
-            <img src="./img/icons/header/icons8-shopping-bag-24.png" alt="" />
+            <img :src="cart" alt="" />
           </li>
         </ul>
       </div>
@@ -30,10 +45,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/partials/variables.scss' as *;
+
 header {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(237, 114, 46);
+  background-color: $main-color;
   align-items: center;
 }
 

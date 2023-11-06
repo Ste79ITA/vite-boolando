@@ -11,8 +11,8 @@ export default {
       <div class="row">
         <!-- CARD 1 -->
         <div class="card">
-          <img class="second-img" src="./img/1b.webp" alt="" />
-          <img src="./img/1.webp" alt="" />
+          <img class="second-img" src="/img/1b.webp" alt="" />
+          <img src="/img/1.webp" alt="" />
           <div class="hearts">&hearts;</div>
           <div class="label">
             <span class="discount">-50%</span>
@@ -26,8 +26,8 @@ export default {
         </div>
         <!-- CARD 2 -->
         <div class="card">
-          <img class="second-img" src="./img/2b.webp" alt="" />
-          <img src="./img/2.webp" alt="" />
+          <img class="second-img" src="/img/2b.webp" alt="" />
+          <img src="/img/2.webp" alt="" />
           <div class="hearts">&hearts;</div>
           <div class="label">
             <span class="discount">-50%</span>
@@ -40,8 +40,8 @@ export default {
         </div>
         <!-- CARD 3 -->
         <div class="card">
-          <img class="second-img" src="./img/3b.webp" alt="" />
-          <img src="./img/3.webp" alt="" />
+          <img class="second-img" src="/img/3b.webp" alt="" />
+          <img src="/img/3.webp" alt="" />
           <div class="hearts">&hearts;</div>
           <div class="label">
             <span class="discount">-50%</span>
@@ -54,8 +54,8 @@ export default {
         </div>
         <div class="card">
           <!-- CARD 4 -->
-          <img class="second-img" src="./img/4b.webp" alt="" />
-          <img src="./img/4.webp" alt="" />
+          <img class="second-img" src="/img/4b.webp" alt="" />
+          <img src="/img/4.webp" alt="" />
           <div class="hearts">&hearts;</div>
           <div class="label">
             <span class="discount">-50%</span>
@@ -69,8 +69,8 @@ export default {
         </div>
         <!-- CARD 5 -->
         <div class="card">
-          <img class="second-img" src="./img/5b.webp" alt="" />
-          <img src="./img/5.webp" alt="" />
+          <img class="second-img" src="/img/5b.webp" alt="" />
+          <img src="/img/5.webp" alt="" />
           <div class="hearts">&hearts;</div>
           <ul>
             <li>Maya Deluxe</li>
@@ -80,8 +80,8 @@ export default {
         </div>
         <div class="card">
           <!-- CARD 6 -->
-          <img class="second-img" src="./img/6b.webp" alt="" />
-          <img src="./img/6.webp" alt="" />
+          <img class="second-img" src="/img/6b.webp" alt="" />
+          <img src="/img/6.webp" alt="" />
           <span class="hearts">&hearts;</span>
           <div class="label">
             <span class="discount green">Sostenibilità</span>
@@ -98,8 +98,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-/* HEARTS */
+@use '../styles/partials/variables' as *;
 
+/* HEARTS */
 .hearts {
   position: absolute;
   display: inline-block;
@@ -108,25 +109,27 @@ export default {
   top: 8px;
   right: 0px;
   font-size: 15px;
-}
 
-.hearts:hover {
-  color: red;
+  &:hover {
+    color: $red-color;
+  }
 }
 
 /* DESCRIPTIONS */
 
-.card ul {
-  list-style: none;
-}
-
-.card ul li:nth-child(odd) {
-  color: grey;
-  font-size: 13px;
-}
-
-.card ul li:last-child :nth-child(odd) {
-  color: red;
+.card {
+  ul {
+    list-style: none;
+    li {
+      &:nth-child(odd) {
+        color: $grey-color;
+        font-size: 13px;
+      }
+      &:last-child :nth-child(odd) {
+        color: $red-color;
+      }
+    }
+  }
 }
 
 /* LABELS */
@@ -139,11 +142,11 @@ export default {
   color: white;
 }
 .discount {
-  background-color: red;
+  background-color: $red-color;
   padding: 3px 5px;
 }
 
 .green {
-  background-color: green;
+  background-color: $green-color;
 }
 </style>
