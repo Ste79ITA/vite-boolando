@@ -1,29 +1,31 @@
 <script>
-import Card from './Card.vue';
-import db from '../db.json';
 export default {
   data() {
-    return { cards: db.products };
+    return {};
   },
-  components: {
-    Card,
-  },
-  created() {
-    console.log(this.cards);
+  props: {
+    item: {
+      type: Object,
+      required: true,
+    },
   },
 };
 </script>
 <template>
-  <main>
-    <div class="container">
-      <div class="row">
-        <!-- CARD  -->
-        <div class="card" v-for="(card, i) in cards">
-          <Card :item="card" />
-        </div>
-      </div>
-    </div>
-  </main>
+  <img class="second-img" :src="item.backImage" alt="" />
+  <img :src="item.frontImage" alt="" />
+  <div class="hearts">&hearts;</div>
+  <div class="label">
+    <span class="discount">discount</span>
+    <span class="discount green">sostenibilità</span>
+  </div>
+  <ul>
+    <li>{{ item.brand }}</li>
+    <li>{{ item.name }}</li>
+    <li>
+      <span>14.99 €</span><span> {{ item.price }} €</span>
+    </li>
+  </ul>
 </template>
 
 <style lang="scss" scoped>
