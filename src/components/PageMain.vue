@@ -8,9 +8,7 @@ export default {
   components: {
     Card,
   },
-  created() {
-    console.log(this.cards);
-  },
+  created() {},
 };
 </script>
 <template>
@@ -18,7 +16,7 @@ export default {
     <div class="container">
       <div class="row">
         <!-- CARD  -->
-        <div class="card" v-for="(card, i) in cards">
+        <div class="card" v-for="(card, i) in cards" key="card.id">
           <Card :item="card" />
         </div>
       </div>
@@ -26,56 +24,4 @@ export default {
   </main>
 </template>
 
-<style lang="scss" scoped>
-@use '../styles/partials/variables' as *;
-@use '../styles/partials/mixins' as *;
-
-/* HEARTS */
-.hearts {
-  @include absolute;
-  background-color: white;
-  padding: 10px 13px;
-  top: 8px;
-  right: 0px;
-  font-size: 15px;
-
-  &:hover {
-    color: $red-color;
-  }
-}
-
-/* DESCRIPTIONS */
-
-.card {
-  ul {
-    list-style: none;
-    li {
-      &:nth-child(odd) {
-        color: $grey-color;
-        font-size: 13px;
-      }
-      &:last-child :nth-child(odd) {
-        color: $red-color;
-      }
-    }
-  }
-}
-
-/* LABELS */
-
-.label {
-  @include absolute;
-
-  left: 0px;
-  bottom: 15%;
-  color: $white-color;
-}
-.discount {
-  background-color: $red-color;
-  padding: 3px 5px;
-}
-
-.green {
-  background-color: $green-color;
-}
-</style>
+<style lang="scss" scoped></style>

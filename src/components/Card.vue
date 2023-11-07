@@ -12,39 +12,27 @@ export default {
 };
 </script>
 <template>
-  <img class="second-img" :src="item.backImage" alt="" />
-  <img :src="item.frontImage" alt="" />
-  <div class="hearts">&hearts;</div>
-  <div class="label">
-    <span class="discount">discount</span>
-    <span class="discount green">sostenibilità</span>
+  <div class="card">
+    <img class="second-img" :src="item.backImage" alt="" />
+    <img :src="item.frontImage" alt="" />
+    <div class="hearts" :class="{ favorite: item.isInFavorites }">&hearts;</div>
+    <div class="label">
+      <span class="discount">discount</span>
+      <span class="discount green">sostenibilità</span>
+    </div>
+    <ul>
+      <li>{{ item.brand }}</li>
+      <li>{{ item.name }}</li>
+      <li>
+        <span>14.99 €</span><span> {{ item.price }} €</span>
+      </li>
+    </ul>
   </div>
-  <ul>
-    <li>{{ item.brand }}</li>
-    <li>{{ item.name }}</li>
-    <li>
-      <span>14.99 €</span><span> {{ item.price }} €</span>
-    </li>
-  </ul>
 </template>
 
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
 @use '../styles/partials/mixins' as *;
-
-/* HEARTS */
-.hearts {
-  @include absolute;
-  background-color: white;
-  padding: 10px 13px;
-  top: 8px;
-  right: 0px;
-  font-size: 15px;
-
-  &:hover {
-    color: $red-color;
-  }
-}
 
 /* DESCRIPTIONS */
 
@@ -63,6 +51,19 @@ export default {
   }
 }
 
+/* HEARTS */
+.hearts {
+  @include absolute;
+  background-color: white;
+  padding: 10px 13px;
+  top: 8px;
+  right: 0px;
+  font-size: 15px;
+}
+
+.favorite {
+  color: $red-color;
+}
 /* LABELS */
 
 .label {
