@@ -1,7 +1,7 @@
 <script>
 export default {
   data() {
-    return {};
+    return { mouseOver: false };
   },
   props: {
     item: {
@@ -10,12 +10,24 @@ export default {
       default: {},
     },
   },
+  methods: {
+    showImg() {
+      this.mouseOver = !this.mouseOver;
+      console.log(this.mouseOver);
+    },
+  },
 };
 </script>
 <template>
   <div class="card">
     <img class="second-img" :src="/img/ + item.backImage" alt="" />
-    <img :src="/img/ + item.frontImage" alt="" />
+    <img
+      :class="{ showSecondImage: this.mouseOver }"
+      @mouseenter="showImg()"
+      @mouseleave="showImg()"
+      :src="/img/ + item.frontImage"
+      alt=""
+    />
     <div class="hearts" :class="{ favorite: item.isInFavorites }">&hearts;</div>
     <div class="label">
       <span class="discount">discount</span>
@@ -39,7 +51,6 @@ export default {
 
 .card {
   ul {
-    list-style: none;
     li {
       &:nth-child(odd) {
         color: $grey-color;
@@ -81,5 +92,9 @@ export default {
 
 .green {
   background-color: $green-color;
+}
+
+.showSecondImage {
+  opacity: 0;
 }
 </style>
