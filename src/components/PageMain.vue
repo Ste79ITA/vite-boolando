@@ -1,7 +1,9 @@
 <script>
+import db from './db.json';
+
 export default {
   data() {
-    return { message: 'TEST' };
+    return { db };
   },
 };
 </script>
