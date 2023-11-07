@@ -8,7 +8,7 @@ export default {
   components: {
     Card,
   },
-  created() {},
+  mounted() {},
 };
 </script>
 <template>

@@ -6,15 +6,16 @@ export default {
   props: {
     item: {
       type: Object,
-      required: true,
+      //   required: true,
+      default: {},
     },
   },
 };
 </script>
 <template>
   <div class="card">
-    <img class="second-img" :src="item.backImage" alt="" />
-    <img :src="item.frontImage" alt="" />
+    <img class="second-img" :src="/img/ + item.backImage" alt="" />
+    <img :src="/img/ + item.frontImage" alt="" />
     <div class="hearts" :class="{ favorite: item.isInFavorites }">&hearts;</div>
     <div class="label">
       <span class="discount">discount</span>
