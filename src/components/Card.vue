@@ -15,7 +15,6 @@ export default {
       this.mouseOver = !this.mouseOver;
     },
   },
-  components: {},
 };
 </script>
 <template>

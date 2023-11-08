@@ -9,7 +9,6 @@ export default {
   components: {
     Card,
   },
-  mounted() {},
 };
 </script>
 <template>

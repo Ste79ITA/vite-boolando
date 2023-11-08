@@ -2,6 +2,8 @@
 import PageHeader from './components/PageHeader.vue';
 import PageMain from './components/PageMain.vue';
 import PageFooter from './components/PageFooter.vue';
+import { store } from './store';
+import axios from 'axios';
 
 export default {
   components: {
@@ -10,9 +12,13 @@ export default {
     PageFooter,
   },
   data() {
-    return {
-      
-    };
+    return {};
+  },
+  created() {
+    axios.get('http://localhost:3000/products').then((res) => {
+      const products = res.data;
+      store.db = products;
+    });
   },
 };
 </script>
