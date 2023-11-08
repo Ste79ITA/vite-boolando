@@ -20,11 +20,11 @@ export default {
         <div>
           Trovaci anche su
           <ul>
-            <li><img src="/img/icons/icons8-twitter.svg" alt="" /></li>
-            <li><img src="/img/icons/icons8-facebook.svg" alt="" /></li>
-            <li><img src="/img/icons/icons8-instagram.svg" alt="" /></li>
-            <li><img src="/img/icons/icons8-pinterest-30.svg" alt="" /></li>
-            <li><img src="/img/icons/icons8-youtube-30.svg" alt="" /></li>
+            <li><font-awesome-icon icon="fa-brands fa-twitter" /></li>
+            <li><font-awesome-icon icon="fa-brands fa-facebook" /></li>
+            <li><font-awesome-icon icon="fa-brands fa-instagram" /></li>
+            <li><font-awesome-icon icon="fa-brands fa-pinterest" /></li>
+            <li><font-awesome-icon icon="fa-brands fa-youtube" /></li>
           </ul>
         </div>
       </div>

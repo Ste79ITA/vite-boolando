@@ -33,10 +33,10 @@ export default {
       <img :src="logo" alt="Logo" />
       <div>
         <ul>
-          <li><img :src="icons[0]" alt="" /></li>
-          <li><img :src="icons[1]" alt="" /></li>
+          <li><font-awesome-icon icon="fa-regular fa-user" /></li>
+          <li><font-awesome-icon icon="fa-regular fa-heart" /></li>
           <li>
-            <img :src="icons[2]" alt="" />
+            <font-awesome-icon icon="fa-solid fa-bag-shopping" />
           </li>
         </ul>
       </div>
