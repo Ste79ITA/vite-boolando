@@ -1,9 +1,10 @@
 <script>
 import Card from './Card.vue';
-import db from '../db.json';
+import { store } from '../store.js';
+
 export default {
   data() {
-    return { cards: db.products };
+    return { cards: store.db };
   },
   components: {
     Card,

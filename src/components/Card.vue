@@ -13,9 +13,9 @@ export default {
   methods: {
     showImg() {
       this.mouseOver = !this.mouseOver;
-      console.log(this.mouseOver);
     },
   },
+  components: {},
 };
 </script>
 <template>
@@ -30,14 +30,14 @@ export default {
     />
     <div class="hearts" :class="{ favorite: item.isInFavorites }">&hearts;</div>
     <div class="label">
-      <span class="discount">discount</span>
+      <span class="discount">Discount</span>
       <span class="discount green">sostenibilità</span>
     </div>
     <ul>
       <li>{{ item.brand }}</li>
       <li>{{ item.name }}</li>
       <li>
-        <span>14.99 €</span><span> {{ item.price }} €</span>
+        <span>19.90 €</span> <span> {{ item.price }} €</span>
       </li>
     </ul>
   </div>
