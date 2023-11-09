@@ -13,7 +13,6 @@ export default {
     openModal(item) {
       this.showModal = true;
       this.selectedItem = item;
-      console.log(this.selectedItem);
     },
     closeModal() {
       this.showModal = false;
@@ -38,10 +37,17 @@ export default {
     </div>
     <div @click="closeModal()" v-if="showModal" class="overlay">
       <div class="modal">
+        <div class="close-modal-btn" @click="closeModal()">
+          <font-awesome-icon icon="fa-regular fa-circle-xmark" />
+        </div>
         <div class="modal-title">
-          <h3>{{ this.selectedItem.name }}</h3>
-          <div class="close-modal-btn" @click="closeModal()">
-            <font-awesome-icon icon="fa-regular fa-circle-xmark" />
+          <div class="modal-img">
+            <img :src="/img/ + this.selectedItem.frontImage" alt="" />
+          </div>
+          <div class="modal-content">
+            <h4>{{ this.selectedItem.brand }}</h4>
+            <h2>{{ this.selectedItem.name }}</h2>
+            <p>{{ this.selectedItem.price }} €</p>
           </div>
         </div>
       </div>
@@ -68,7 +74,22 @@ export default {
   .modal-title {
     @include flex;
     align-items: center;
-    justify-content: space-between;
+  }
+
+  .modal-img {
+    width: 100%;
+    max-width: 200px;
+  }
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 40px;
+  }
+  .close-modal-btn {
+    text-align: end;
+    font-size: 25px;
+    margin-top: -20px;
   }
 }
 
