@@ -12,12 +12,12 @@ export default {
     PageFooter,
   },
   data() {
-    return {};
+    return { store };
   },
   created() {
     axios.get('http://localhost:3000/products').then((res) => {
       const products = res.data;
-      store.db = products;
+      this.store.db = products;
     });
   },
 };

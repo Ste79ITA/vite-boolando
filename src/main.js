@@ -4,7 +4,11 @@ import App from './App.vue';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faUser, faHeart } from '@fortawesome/free-regular-svg-icons';
+import {
+  faUser,
+  faHeart,
+  faCircleXmark,
+} from '@fortawesome/free-regular-svg-icons';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import {
   faTwitter,
@@ -18,6 +22,7 @@ library.add(
   faUser,
   faHeart,
   faBagShopping,
+  faCircleXmark,
   faTwitter,
   faFacebook,
   faInstagram,

@@ -34,7 +34,9 @@ export default {
     </div>
     <ul>
       <li>{{ item.brand }}</li>
-      <li>{{ item.name }}</li>
+      <li class="item-name" @click="$emit('displayModal', item)">
+        {{ item.name }}
+      </li>
       <li>
         <span>19.90 €</span> <span> {{ item.price }} €</span>
       </li>
@@ -95,5 +97,9 @@ export default {
 
 .showSecondImage {
   opacity: 0;
+}
+
+.item-name {
+  cursor: pointer;
 }
 </style>
