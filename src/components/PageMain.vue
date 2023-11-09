@@ -12,7 +12,8 @@ export default {
   methods: {
     openModal(item) {
       this.showModal = true;
-      console.log(item);
+      this.selectedItem = item;
+      console.log(this.selectedItem);
     },
     closeModal() {
       this.showModal = false;
@@ -31,14 +32,14 @@ export default {
       <div class="row">
         <!-- CARD  -->
         <div class="card" v-for="(card, i) in cards" key="card.id">
-          <Card :item="card" @displayModal="openModal()" />
+          <Card :item="card" @displayModal="openModal" />
         </div>
       </div>
     </div>
-    <div v-if="showModal" class="overlay">
+    <div @click="closeModal()" v-if="showModal" class="overlay">
       <div class="modal">
         <div class="modal-title">
-          <h3>Titolo</h3>
+          <h3>{{ this.selectedItem.name }}</h3>
           <div class="close-modal-btn" @click="closeModal()">
             <font-awesome-icon icon="fa-regular fa-circle-xmark" />
           </div>
